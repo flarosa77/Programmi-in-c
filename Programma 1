@@ -1,33 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <time.h>
 #define MAX 150
 
-void crea_array(int* ,int);
+int *crea_array(int* ,int);
 void inizializza_array(int*, int);
-int media(int);
+int media(int*);
 
-int main(){
-	int array, dim;
-	
-	srand(time (NULL));
-	
-	printf("Inserisci dimensione array ");
-	scanf("%d", &dim);
-	
-	
-	return 0;
+
+
+int main(int argc, const char * argv[]) {
+    int *array=NULL, dim, i;
+    
+    srand(time(NULL));
+    
+    printf("Inserisci dimensione array\n");
+    scanf("%d", &dim);
+    
+    array = crea_array(array,dim);
+    inizializza_array(array, dim);
+    
+    for(i=0; i<dim; i++){
+        printf("%d\n",array[i]);
+    }
+    
+    
+    return 0;
 }
 
-void crea_array(int *array, int dim){
-	
-	array=malloc(dim*sizeof(int));
+
+int *crea_array(int *array, int dim){
+    
+    array=malloc(dim*sizeof(int));
+    
+    return array;
 }
 
 void inizializza_array(int *array, int dim){
-	int i;
-	
-	for(i=0; i<dim; i++){
-		array=rand()%MAX+1;
-	}
+    int i;
+    
+    for(i=0; i<dim; i++){
+        array[i]=rand()%MAX+1;
+    }
+}
+
+int media(int *array){
+    float result = 0.0;
+    
+    return result;
 }
