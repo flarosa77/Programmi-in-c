@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#define MAX 150
+
+void crea_array(int* ,int);
+void inizializza_array(int*, int);
+int media(int);
+
+int main(){
+	int array, dim;
+	
+	srand(time (NULL));
+	
+	printf("Inserisci dimensione array ");
+	scanf("%d", &dim);
+	
+	
+	return 0;
+}
+
+void crea_array(int *array, int dim){
+	
+	array=malloc(dim*sizeof(int));
+}
+
+void inizializza_array(int *array, int dim){
+	int i;
+	
+	for(i=0; i<dim; i++){
+		array=rand()%MAX+1;
+	}
+}
